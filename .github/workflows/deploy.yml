@@ -2,6 +2,8 @@ name: Deploy VitePress site
 
 on:
   push:
+    branches: [ main, dev ]
+  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -43,3 +45,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          preview: ${{ github.ref != 'refs/heads/main' }}
