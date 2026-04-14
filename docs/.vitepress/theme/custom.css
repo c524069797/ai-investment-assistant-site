@@ -47,11 +47,20 @@ a:hover {
   text-shadow: 0 0 8px rgba(91,233,255,0.6);
 }
 
-/* Giscus container spacing */
-.giscus-wrap {
+/* Comment container spacing */
+.comment-wrap {
   padding: 24px;
   border-radius: 12px;
   border: 1px solid rgba(91,233,255,0.12);
   background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
 }
 
+/* Waline tweaks for tech theme */
+.waline {
+  --waline-theme-color: var(--vp-c-brand-1);
+  --waline-text-color: var(--vp-c-text-1);
+  --waline-bgcolor: transparent;
+  --waline-border: 1px solid rgba(91,233,255,0.12);
+  --waline-border-color: rgba(91,233,255,0.18);
+  --waline-color: var(--vp-c-brand-1);
+}
