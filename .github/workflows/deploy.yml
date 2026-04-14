@@ -36,7 +36,7 @@ jobs:
           path: docs/.vitepress/dist
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -47,7 +47,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
   deploy_preview:
-    if: github.ref != 'refs/heads/main'
+    if: ${{ github.ref != 'refs/heads/main' }}
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -56,5 +56,3 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           preview: true
-        with:
-          preview: ${{ github.ref != 'refs/heads/main' }}
